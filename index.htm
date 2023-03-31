@@ -1,54 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Economy Manager - Idle Game</title>
-  <link rel="stylesheet" href="style.css">
+	<title>Juego Idle Avanzado de Economía</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Economy Manager - Idle Game</h1>
-  </header>
-  <main>
-    <div class="economy-section">
-      <h2>Economía</h2>
-      <div class="economy-stats">
-        <div>
-          <span>Dinero:</span>
-          <span id="dinero">0.00</span>
-        </div>
-        <div>
-          <span>Tasa:</span>
-          <span id="tasa">1.00</span>
-        </div>
-        <div>
-          <span>Costo mejora:</span>
-          <span id="costoMejora">10.00</span>
-        </div>
-        <div>
-          <span>Nivel mejora:</span>
-          <span id="nivelMejora">1</span>
-        </div>
-        <div>
-          <span>Temporizador:</span>
-          <span id="temporizador">0</span>
-        </div>
-      </div>
-      <button id="obtenerRecursos">Obtener recursos</button>
-      <button id="mejorarTasa">Mejorar tasa</button>
-    </div>
-    <div class="ranking-section">
-      <h2>Ranking Diario</h2>
-      <table id="rankingTabla">
-        <tr>
-          <th>Posición</th>
-          <th>Nombre</th>
-          <th>Puntaje</th>
-        </tr>
-      </table>
-    </div>
-  </main>
-  <script src="script.js"></script>
+	<div id="container">
+		<h1>Juego Idle Avanzado de Economía</h1>
+		<div id="stats">
+			<h2>Estadísticas</h2>
+			<p>Dinero: <span id="money">0</span></p>
+			<p>Tasa de interés: <span id="interest-rate">0%</span></p>
+			<p>Préstamos: <span id="loans">0</span></p>
+			<p>Deuda: <span id="debt">$0</span></p>
+			<p>Ingreso pasivo: <span id="passive-income">$0</span>/s</p>
+			<p>Bono por inversión: <span id="investment-bonus">0%</span></p>
+			<p>Mejoras de inversión: <span id="investment-upgrades">0</span></p>
+		</div>
+		<div id="actions">
+			<h2>Acciones</h2>
+			<button id="earn-money">Ganar Dinero</button>
+			<button id="invest">Invertir</button>
+			<button id="take-loan">Tomar Préstamo</button>
+			<button id="pay-loan">Pagar Préstamo</button>
+			<button id="upgrade-investment">Mejorar Inversión</button>
+		</div>
+	</div>
+	<script src="app.js"></script>
 </body>
 </html>
