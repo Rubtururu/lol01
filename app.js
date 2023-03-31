@@ -48,6 +48,14 @@ function upgradeInvestment() {
 	}
 }
 
+function updatePassiveIncome() {
+	passiveIncome = 0;
+	for (let i = 0; i < investmentUpgrades; i++) {
+		passiveIncome += Math.floor(money / 10) * (interestRate + investmentBonus);
+	}
+	updateStats();
+}
+
 function updateStats() {
 	document.getElementById('money').textContent = money;
 	document.getElementById('interest-rate').textContent = interestRate + investmentBonus + '%';
@@ -70,3 +78,8 @@ setInterval(function() {
 	money += passiveIncome;
 	updateStats();
 }, 1000);
+
+// Loop para actualizar ingresos pasivos cada 5 segundos
+setInterval(function() {
+	updatePassiveIncome();
+}, 5000);
