@@ -1,62 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Juego Idle de Gestión de Economía</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Economy Manager - Idle Game</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Juego Idle de Gestión de Economía</h1>
-    <div class="row">
-      <div class="column">
-        <h2>Recursos</h2>
-        <ul class="resources">
-          <li class="resource" id="resource1">
-            <span class="resource-name">Dinero</span>
-            <span class="resource-amount">$0</span>
-            <button class="btn-increase" id="btn-increase1">+</button>
-            <button class="btn-decrease" id="btn-decrease1">-</button>
-          </li>
-          <li class="resource" id="resource2">
-            <span class="resource-name">Energía</span>
-            <span class="resource-amount">0</span>
-            <button class="btn-increase" id="btn-increase2">+</button>
-            <button class="btn-decrease" id="btn-decrease2">-</button>
-          </li>
-        </ul>
+  <header>
+    <h1>Economy Manager - Idle Game</h1>
+  </header>
+  <main>
+    <div class="economy-section">
+      <h2>Economía</h2>
+      <div class="economy-stats">
+        <div>
+          <span>Dinero:</span>
+          <span id="dinero">0.00</span>
+        </div>
+        <div>
+          <span>Tasa:</span>
+          <span id="tasa">1.00</span>
+        </div>
+        <div>
+          <span>Costo mejora:</span>
+          <span id="costoMejora">10.00</span>
+        </div>
+        <div>
+          <span>Nivel mejora:</span>
+          <span id="nivelMejora">1</span>
+        </div>
+        <div>
+          <span>Temporizador:</span>
+          <span id="temporizador">0</span>
+        </div>
       </div>
-      <div class="column">
-        <h2>Mejoras</h2>
-        <ul class="upgrades">
-          <li class="upgrade" id="upgrade1">
-            <span class="upgrade-name">Nivel 1</span>
-            <span class="upgrade-description">Aumenta la producción de energía</span>
-            <span class="upgrade-cost">$10</span>
-            <button class="btn-upgrade" id="btn-upgrade1">Comprar</button>
-          </li>
-          <li class="upgrade" id="upgrade2">
-            <span class="upgrade-name">Nivel 2</span>
-            <span class="upgrade-description">Aumenta la producción de dinero</span>
-            <span class="upgrade-cost">$50</span>
-            <button class="btn-upgrade" id="btn-upgrade2">Comprar</button>
-          </li>
-        </ul>
-      </div>
+      <button id="obtenerRecursos">Obtener recursos</button>
+      <button id="mejorarTasa">Mejorar tasa</button>
     </div>
-    <div class="row">
-      <div class="column">
-        <h2>Log</h2>
-        <ul class="log" id="log">
-        </ul>
-      </div>
-      <div class="column">
-        <h2>Ranking Diario</h2>
-        <ol class="ranking" id="ranking">
-        </ol>
-      </div>
+    <div class="ranking-section">
+      <h2>Ranking Diario</h2>
+      <table id="rankingTabla">
+        <tr>
+          <th>Posición</th>
+          <th>Nombre</th>
+          <th>Puntaje</th>
+        </tr>
+      </table>
     </div>
-  </div>
-  <script src="app.js"></script>
+  </main>
+  <script src="script.js"></script>
 </body>
 </html>
