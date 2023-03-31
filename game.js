@@ -42,3 +42,9 @@ if (canvas.getContext) {
     requestAnimationFrame(loop);
   });
 }
+canvas.addEventListener('click', function(event) {
+  const x = event.clientX;
+  const y = event.clientY;
+
+  // Hacer algo con las coordenadas del clic
+});
