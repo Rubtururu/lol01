@@ -73,4 +73,4 @@ function actualizarTablaRanking() {
   for (let i = 0; i < ranking.length; i++) {
     const posicion = i + 1;
     const nombre = ranking[i].nombre;
-    const puntaje = ranking
+    const puntaje = ranking;
