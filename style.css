@@ -1,64 +1,54 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
+body {
+	font-family: Arial, sans-serif;
+	background-color: #f2f2f2;
+	margin: 0;
+	padding: 0;
 }
 
-header {
-  background-color: #1abc9c;
-  color: #fff;
-  padding: 20px;
+#container {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 20px;
+	background-color: #fff;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 }
 
-main {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 20px;
+h1 {
+	text-align: center;
 }
 
-.economy-section {
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0 0 10px #ccc;
-  margin: 10px;
-  padding: 20px;
-  text-align: center;
-  width: 300px;
+#stats, #actions {
+	margin-top: 20px;
+	border-top: 1px solid #ccc;
+	padding-top: 20px;
 }
 
-.economy-section h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
+#stats h2, #actions h2 {
+	margin-top: 0;
 }
 
-.economy-stats div {
-  margin-bottom: 10px;
+#stats p {
+	margin: 0;
 }
 
-.economy-stats span {
-  display: inline-block;
-  width: 120px;
+#stats span {
+	font-weight: bold;
 }
 
 button {
-  background-color: #1abc9c;
-  border: none;
-  border-radius: 5px;
-  color: #fff;
-  cursor: pointer;
-  font-size: 16px;
-  margin-top: 10px;
-  padding: 10px;
+	background-color: #4CAF50;
+	color: #fff;
+	border: none;
+	padding: 10px 20px;
+	font-size: 16px;
+	cursor: pointer;
+	border-radius: 5px;
 }
 
 button:hover {
-  background-color: #16a085;
+	background-color: #3e8e41;
 }
 
-.ranking-section {
-  background-color: #fff;
- 
+button:active {
+	background-color: #4CAF50;
+}
