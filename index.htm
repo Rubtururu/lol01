@@ -1,15 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Candy Crush</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Juego Idle con Ranking Diario</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="gameboard"></div>
-    <div id="score">Score: <span id="score-value">0</span></div>
-    <button id="start-button">Start Game</button>
-
-    <script src="app.js"></script>
+  <h1>Juego Idle con Ranking Diario</h1>
+  <div class="container">
+    <div class="resources">
+      <h2>Recursos</h2>
+      <p id="resource-count">0</p>
+      <button id="resource-btn">Obtener Recurso</button>
+    </div>
+    <div class="leaderboard">
+      <h2>Ranking Diario</h2>
+      <ol id="leaderboard-list">
+      </ol>
+    </div>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
