@@ -1,49 +1,76 @@
-const GAMEBOARD_WIDTH = 400;
-const GAMEBOARD_HEIGHT = 400;
-const NUM_TILE_TYPES = 5;
+// Variables del juego
+let dinero = 0;
+let tasa = 1; // Dinero por segundo
+let tasaMejora = 1.1; // Tasa de mejora para actualizar la tasa de generación de dinero
+let costoMejora = 10; // Costo de la próxima mejora de la tasa de generación de dinero
+let nivelMejora = 1; // Nivel de mejora actual
+let temporizador = 0; // Tiempo en segundos
+let temporizadorIncremento = 1; // Tiempo en segundos para incrementar la tasa de generación de dinero
+let temporizadorRanking = 86400; // Tiempo en segundos para actualizar el ranking diario
+let ranking = []; // Array de objetos con los nombres y puntajes de los 10 mejores jugadores del día
+let rankingActualizado = false; // Booleano para saber si el ranking ha sido actualizado hoy
 
-let score = 0;
-let selectedTile = null;
-let tiles = [];
+// Elementos de la interfaz de usuario
+const dineroSpan = document.getElementById('dinero');
+const tasaSpan = document.getElementById('tasa');
+const costoMejoraSpan = document.getElementById('costoMejora');
+const nivelMejoraSpan = document.getElementById('nivelMejora');
+const temporizadorSpan = document.getElementById('temporizador');
+const rankingTabla = document.getElementById('rankingTabla');
 
-const gameboardEl = document.getElementById('gameboard');
-const scoreValueEl = document.getElementById('score-value');
-const startButton = document.getElementById('start-button');
-
-// Create a new tile and add it to the gameboard
-function createTile(x, y) {
-    const tileEl = document.createElement('div');
-    tileEl.classList.add('tile');
-    tileEl.style.left = x + 'px';
-    tileEl.style.top = y + 'px';
-
-    // Assign a random tile type to the new tile
-    const tileType = Math.floor(Math.random() * NUM_TILE_TYPES);
-    tileEl.dataset.tileType = tileType;
-
-    // Add a click event listener to the tile
-    tileEl.addEventListener('click', function() {
-        if (!selectedTile) {
-            // If no tile is currently selected, select the clicked tile
-            selectedTile = this;
-            selectedTile.style.border = '5px solid #000';
-        } else if (selectedTile === this) {
-            // If the clicked tile is the selected tile, deselect it
-            selectedTile.style.border = '5px solid #fff';
-            selectedTile = null;
-        } else {
-            // If a different tile is currently selected, swap the tiles
-            swapTiles(selectedTile, this);
-        }
-    });
-
-    gameboardEl.appendChild(tileEl);
-    tiles.push(tileEl);
+// Función para actualizar la tasa de generación de dinero
+function actualizarTasa() {
+  dinero += tasa;
+  dineroSpan.innerText = dinero.toFixed(2);
 }
 
-// Swap the positions and tile types of two tiles
-function swapTiles(tile1, tile2) {
-    const tile1X = parseInt(tile1.style.left);
-    const tile1Y = parseInt(tile1.style.top);
-    const tile2X = parseInt(tile2.style.left);
-    const tile2Y = parseInt(tile
+// Función para actualizar el temporizador y la tasa de generación de dinero
+function actualizarTemporizador() {
+  temporizador += temporizadorIncremento;
+  temporizadorSpan.innerText = temporizador;
+  
+  if (temporizador % 10 === 0) {
+    tasa *= tasaMejora;
+    tasaSpan.innerText = tasa.toFixed(2);
+  }
+  
+  if (temporizador % temporizadorRanking === 0 && !rankingActualizado) {
+    actualizarRanking();
+  }
+}
+
+// Función para actualizar el ranking diario
+function actualizarRanking() {
+  // Simulamos la obtención de los mejores puntajes del día
+  const mejoresPuntajes = [
+    {nombre: 'Juan', puntaje: 120},
+    {nombre: 'Pedro', puntaje: 110},
+    {nombre: 'Maria', puntaje: 105},
+    {nombre: 'Lucia', puntaje: 100},
+    {nombre: 'Carlos', puntaje: 95},
+    {nombre: 'Jose', puntaje: 90},
+    {nombre: 'Ana', puntaje: 85},
+    {nombre: 'Sofia', puntaje: 80},
+    {nombre: 'Miguel', puntaje: 75},
+    {nombre: 'Luis', puntaje: 70},
+  ];
+  
+  ranking = mejoresPuntajes;
+  actualizarTablaRanking();
+  rankingActualizado = true;
+}
+
+// Función para actualizar la tabla del ranking diario
+function actualizarTablaRanking() {
+  rankingTabla.innerHTML = `
+    <tr>
+      <th>Posición</th>
+      <th>Nombre</th>
+      <th>Puntaje</th>
+    </tr>
+  `;
+  
+  for (let i = 0; i < ranking.length; i++) {
+    const posicion = i + 1;
+    const nombre = ranking[i].nombre;
+    const puntaje = ranking
