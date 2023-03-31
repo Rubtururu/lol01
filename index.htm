@@ -1,31 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Juego Idle Avanzado de Economía</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tower Defense Game</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<div id="container">
-		<h1>Juego Idle Avanzado de Economía</h1>
-		<div id="stats">
-			<h2>Estadísticas</h2>
-			<p>Dinero: <span id="money">0</span></p>
-			<p>Tasa de interés: <span id="interest-rate">0%</span></p>
-			<p>Préstamos: <span id="loans">0</span></p>
-			<p>Deuda: <span id="debt">$0</span></p>
-			<p>Ingreso pasivo: <span id="passive-income">$0</span>/s</p>
-			<p>Bono por inversión: <span id="investment-bonus">0%</span></p>
-			<p>Mejoras de inversión: <span id="investment-upgrades">0</span></p>
-		</div>
-		<div id="actions">
-			<h2>Acciones</h2>
-			<button id="earn-money">Ganar Dinero</button>
-			<button id="invest">Invertir</button>
-			<button id="take-loan">Tomar Préstamo</button>
-			<button id="pay-loan">Pagar Préstamo</button>
-			<button id="upgrade-investment">Mejorar Inversión</button>
-		</div>
-	</div>
-	<script src="app.js"></script>
+  <h1>Tower Defense Game</h1>
+  <canvas id="game-canvas"></canvas>
+  <div class="container">
+    <span>Score: <span id="score">0</span></span>
+    <button id="start-button">Start Game</button>
+    <span>Wave: <span id="wave">1</span></span>
+  </div>
+  <script src="game.js"></script>
 </body>
 </html>
