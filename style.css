@@ -1,30 +1,64 @@
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
-body {
-  font-family: sans-serif;
+header {
+  background-color: #1abc9c;
+  color: #fff;
+  padding: 20px;
 }
 
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 50px;
-  background-color: #f0f0f0;
-}
-
-.row {
+main {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 50px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
 }
 
-.column {
-  flex-basis: 48%;
+.economy-section {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px #ccc;
+  margin: 10px;
+  padding: 20px;
+  text-align: center;
+  width: 300px;
 }
 
-h1 {
-  text-align: center
+.economy-section h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
 
+.economy-stats div {
+  margin-bottom: 10px;
+}
+
+.economy-stats span {
+  display: inline-block;
+  width: 120px;
+}
+
+button {
+  background-color: #1abc9c;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+button:hover {
+  background-color: #16a085;
+}
+
+.ranking-section {
+  background-color: #fff;
+ 
