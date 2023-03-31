@@ -1,42 +1,51 @@
-#gameboard {
-    width: 400px;
-    height: 400px;
-    margin: 20px auto;
-    border: 5px solid #000;
-    position: relative;
+body {
+  background-color: #f1f1f1;
 }
 
-.tile {
-    width: 80px;
-    height: 80px;
-    border: 5px solid #fff;
-    border-radius: 10px;
-    position: absolute;
-    cursor: pointer;
-    transition: background-color 0.2s;
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-#score {
-    width: 400px;
-    margin: 20px auto;
-    text-align: center;
-    font-size: 24px;
+.resources {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
-#start-button {
-    display: block;
-    margin: 20px auto;
-    padding: 10px 20px;
-    font-size: 18px;
-    background-color: #000;
-    color: #fff;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background-color 0.2s;
+.resources h2 {
+  margin-top: 0;
 }
 
-#start-button:hover,
-.tile:hover {
-    background-color: #eee;
+.resources p {
+  font-size: 48px;
+  margin: 20px 0;
+}
+
+.leaderboard {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  padding: 20px;
+  text-align: center;
+}
+
+.leaderboard h2 {
+  margin-top: 0;
+}
+
+.leaderboard ol {
+  list-style: none;
+  padding: 0;
+}
+
+.leaderboard li {
+  font-size: 24px;
+  margin-bottom: 10px;
 }
