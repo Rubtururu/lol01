@@ -1,24 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="UTF-8">
-  <title>Juego Idle con Ranking Diario</title>
+  <title>Juego Idle de Gestión de Economía</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Juego Idle con Ranking Diario</h1>
   <div class="container">
-    <div class="resources">
-      <h2>Recursos</h2>
-      <p id="resource-count">0</p>
-      <button id="resource-btn">Obtener Recurso</button>
+    <h1>Juego Idle de Gestión de Economía</h1>
+    <div class="row">
+      <div class="column">
+        <h2>Recursos</h2>
+        <ul class="resources">
+          <li class="resource" id="resource1">
+            <span class="resource-name">Dinero</span>
+            <span class="resource-amount">$0</span>
+            <button class="btn-increase" id="btn-increase1">+</button>
+            <button class="btn-decrease" id="btn-decrease1">-</button>
+          </li>
+          <li class="resource" id="resource2">
+            <span class="resource-name">Energía</span>
+            <span class="resource-amount">0</span>
+            <button class="btn-increase" id="btn-increase2">+</button>
+            <button class="btn-decrease" id="btn-decrease2">-</button>
+          </li>
+        </ul>
+      </div>
+      <div class="column">
+        <h2>Mejoras</h2>
+        <ul class="upgrades">
+          <li class="upgrade" id="upgrade1">
+            <span class="upgrade-name">Nivel 1</span>
+            <span class="upgrade-description">Aumenta la producción de energía</span>
+            <span class="upgrade-cost">$10</span>
+            <button class="btn-upgrade" id="btn-upgrade1">Comprar</button>
+          </li>
+          <li class="upgrade" id="upgrade2">
+            <span class="upgrade-name">Nivel 2</span>
+            <span class="upgrade-description">Aumenta la producción de dinero</span>
+            <span class="upgrade-cost">$50</span>
+            <button class="btn-upgrade" id="btn-upgrade2">Comprar</button>
+          </li>
+        </ul>
+      </div>
     </div>
-    <div class="leaderboard">
-      <h2>Ranking Diario</h2>
-      <ol id="leaderboard-list">
-      </ol>
+    <div class="row">
+      <div class="column">
+        <h2>Log</h2>
+        <ul class="log" id="log">
+        </ul>
+      </div>
+      <div class="column">
+        <h2>Ranking Diario</h2>
+        <ol class="ranking" id="ranking">
+        </ol>
+      </div>
     </div>
   </div>
-  <script src="script.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
